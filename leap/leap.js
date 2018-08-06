@@ -4,17 +4,13 @@ var Year = function (yearInput) {
 };
 
 Year.prototype.isLeap = function () {
-  if (this.value % 4 == 0) {
-    if (this.value % 100 == 0) {
-      if (this.value % 400 == 0) {
-        return true;
-      }
-        return false;
-    }
-    return true;
-  }
-  return false;
+  let yearIn = this.value
+  let checkLeapYear = ((yearIn % 100 === 0) ? (yearIn % 400 === 0) : (yearIn % 4 === 0));
+
+  return checkLeapYear;
 };
+
+
 
 
 module.exports = Year;
